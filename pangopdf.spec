@@ -9,11 +9,14 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	5f9ce2613fe09232563030daab51a685
 Patch0:		%{name}-moduledir.patch
 URL:		http://pangopdf.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	freetype-devel >= 2.0.9
 BuildRequires:	fontconfig-devel >= 1.0.1
 BuildRequires:	glib2-devel >= 2.1.3
 BuildRequires:	gtk-doc >= 0.10
 BuildRequires:	libgnomeprint-devel >= 2.2
+BuildRequires:	libtool
 BuildRequires:	pdflib-devel >= 4.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	xft-devel >= 2.0.0
