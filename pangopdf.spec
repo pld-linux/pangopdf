@@ -99,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 #%%attr(755,root,root) %{_bindir}/*
 #%%config %{_sysconfdir}/pango/pangox.aliases
+%dir %{_libdir}/pangopdf
 %attr(755,root,root) %{_libdir}/pangopdf/lib*.so.*.*
 %dir %{_libdir}/pangopdf/pango
 %dir %{_libdir}/pangopdf/pango/1.2.0
