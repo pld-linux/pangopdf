@@ -1,4 +1,5 @@
 Summary:	Pango PDF backend
+Summary(pl):	Backend PDF dla Pango
 Name:		pangopdf
 Version:	1.2.0.1
 Release:	0.1
@@ -9,10 +10,18 @@ URL:		http://pangopdf.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-PangoPDF implements a version of the Pango (http://www.pango.org/) library
-with a PDF backend for creating PDF output. This library also implements
-several of the inline properties defined by XSL (http://www.w3.org/TR/xsl/)
-that are not currently implemented by Pango.
+PangoPDF implements a version of the Pango (http://www.pango.org/)
+library with a PDF backend for creating PDF output. This library also
+implements several of the inline properties defined by XSL
+(http://www.w3.org/TR/xsl/) that are not currently implemented by
+Pango.
+
+%description -l pl
+PangoPDF to implementacja wersji biblioteki Pango
+(http://www.pango.org/) z backendem PDF do tworzenia wyj¶cia w PDF. Ta
+biblioteka ma zaimplementowanych tak¿e trochê w³asno¶ci inline
+zdefiniowanych przez XSL (http://www.w3.org/TR/xsl/), które aktualnie
+nie s± zaimplementowane w Pango.
 
 %prep
 %setup -q
