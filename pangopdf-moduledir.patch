@@ -1,0 +1,24 @@
+diff -Nru pangopdf-1.2.3.0.orig/modules/hangul/Makefile.am pangopdf-1.2.3.0/modules/hangul/Makefile.am
+--- pangopdf-1.2.3.0.orig/modules/hangul/Makefile.am	2003-02-17 19:09:07.000000000 +0100
++++ pangopdf-1.2.3.0/modules/hangul/Makefile.am	2003-06-25 14:21:21.000000000 +0200
+@@ -45,7 +45,7 @@
+ noinst_LTLIBRARIES = $(X_INCLUDED) $(XFT_INCLUDED)
+ module_LTLIBRARIES = $(X_MODULES) $(XFT_MODULES)
+ moddefine = $(X_PREFIX) $(XFT_PREFIX)
+-moduledir = $(libdir)/pango/$(PANGO_MODULE_VERSION)/modules
++moduledir = $(pkglibdir)/pango/$(PANGO_MODULE_VERSION)/modules
+ 
+ INCLUDES = 				\
+ 	-DPANGO_ENABLE_ENGINE		\
+diff -Nru pangopdf-1.2.3.0.orig/modules/indic/Makefile.am pangopdf-1.2.3.0/modules/indic/Makefile.am
+--- pangopdf-1.2.3.0.orig/modules/indic/Makefile.am	2003-04-25 01:13:41.000000000 +0200
++++ pangopdf-1.2.3.0/modules/indic/Makefile.am	2003-06-25 14:21:36.000000000 +0200
+@@ -92,7 +92,7 @@
+ 
+ noinst_LTLIBRARIES = $(myanmar_x_noinst) $(gurmukhi_x_noinst) $(bengali_x_noinst) $(devanagari_x_noinst) $(gujarati_x_noinst) $(indic_xft_noinst) $(indic_ft2_noinst)
+ 
+-moduledir = $(libdir)/pango/$(PANGO_MODULE_VERSION)/modules
++moduledir = $(pkglibdir)/pango/$(PANGO_MODULE_VERSION)/modules
+ module_LTLIBRARIES = $(myanmar_x_inst) $(gurmukhi_x_inst) $(bengali_x_inst) $(devanagari_x_inst) $(gujarati_x_inst) $(indic_xft_inst) $(indic_ft2_inst)
+ 
+ 
