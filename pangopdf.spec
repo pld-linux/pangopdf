@@ -78,7 +78,8 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure \
-	--with-html-dir=%{_gtkdocdir}
+	--with-html-dir=%{_gtkdocdir} \
+	--with-x
 
 %{__make}
 
