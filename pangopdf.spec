@@ -6,6 +6,7 @@ Release:	0.1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	04c2cc8247b4cb5779b87f8c7f66b1f6
 URL:		http://pangopdf.sourceforge.net/
 BuildRequires:	freetype-devel >= 2.0.9
 BuildRequires:	fontconfig-devel >= 1.0.1
