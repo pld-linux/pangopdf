@@ -1,13 +1,12 @@
 Summary:	Pango PDF backend
 Summary(pl):	Backend PDF dla Pango
 Name:		pangopdf
-Version:	1.2.3.0
+Version:	1.2.3.1
 Release:	0.1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	5f9ce2613fe09232563030daab51a685
-Patch0:		%{name}-moduledir.patch
+# Source0-md5:	9f64a808ac7dfd96ad97effdd7fe0dcf
 URL:		http://pangopdf.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -69,7 +68,6 @@ u¿ywaj±cych bibliotek pangopdf.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f missing
