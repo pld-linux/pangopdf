@@ -22,6 +22,8 @@ Requires:	fontconfig >= 1.0.1
 Requires:	freetype >= 2.0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_noautoprov	libpango-1.0.so.0 libpangoft2-1.0.so.0 libpangox-1.0.so.0 libpangoxft-1.0.so.0
+
 %description
 PangoPDF implements a version of the Pango (http://www.pango.org/)
 library with a PDF backend for creating PDF output. This library also
