@@ -14,7 +14,7 @@ BuildRequires:	gtk-doc >= 0.10
 BuildRequires:	libgnomeprint-devel >= 2.2
 BuildRequires:	pdflib-devel >= 4.0.0
 BuildRequires:	pkgconfig
-BuildRequires:	xft >= 2.0.0
+BuildRequires:	xft-devel >= 2.0.0
 Requires:	glib2-devel >= 2.1.3
 Requires:	fontconfig >= 1.0.1
 Requires:	freetype >= 2.0.9
