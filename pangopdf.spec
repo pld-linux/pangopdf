@@ -1,3 +1,9 @@
+#
+# Conditional build:
+%bcond_with	gnomeprint	# build GNOME Print (pangogp) backend
+				# (broken: libgnomeprint is linked with newer pango)
+%bcond_without	qt		# don't build Qt-based viewer
+#
 Summary:	Pango PDF backend
 Summary(pl):	Backend PDF dla Pango
 Name:		pangopdf
@@ -8,16 +14,20 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/pangopdf/%{name}-%{version}.tar.gz
 # Source0-md5:	e0671aeaba45e0aa5a2c1aba8cebba41
 URL:		http://pangopdf.sourceforge.net/
-BuildRequires:	autoconf
+BuildRequires:	XFree86-devel
+BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	freetype-devel >= 2.0.9
 BuildRequires:	fontconfig-devel >= 1:1.0.1
 BuildRequires:	glib2-devel >= 2.1.3
 BuildRequires:	gtk-doc >= 0.10
-BuildRequires:	libgnomeprint-devel >= 2.2
-BuildRequires:	libtool
+%{?with_gnomeprint:BuildRequires:	libgnomeprint-devel >= 2.2}
+%{?with_qt:BuildRequires:	libstdc++-devel}
+BuildRequires:	libtool >= 2:1.5
 BuildRequires:	pdflib-devel >= 4.0.0
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig
+%{?with_qt:BuildRequires:	qt-devel}
 BuildRequires:	xft-devel >= 2.0.0
 Requires:	glib2-devel >= 2.1.3
 Requires:	fontconfig >= 1:1.0.1
@@ -75,9 +85,11 @@ u¿ywaj±cych bibliotek pangopdf.
 %{__autoconf}
 %{__automake}
 %configure \
-	--with-html-dir=%{_gtkdocdir} \
+	%{!?with_gnomeprint:--disable-gp} \
 	--enable-pdflib \
-	--with-x
+	--with-html-dir=%{_gtkdocdir} \
+	--with-x \
+	%{!?with_qt:--without-qt}
 
 %{__make}
 
@@ -95,10 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README
+%doc AUTHORS* ChangeLog* NEWS* README* TODO
 %attr(755,root,root) %{_bindir}/*
 %dir %{_sysconfdir}/pangopdf
-%config %{_sysconfdir}/pangopdf/pangox.aliases
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pangopdf/pangox.aliases
 %dir %{_libdir}/pangopdf
 %attr(755,root,root) %{_libdir}/pangopdf/lib*.so.*
 %dir %{_libdir}/pangopdf/pango
