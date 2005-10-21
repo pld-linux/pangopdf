@@ -79,6 +79,11 @@ u¿ywaj±cych bibliotek pangopdf.
 %prep
 %setup -q
 
+sed -i -e 's,QTDIR/lib ,QTDIR/%{_lib} ,;s,QTDIR/include,QTDIR/include/qt,;s/-lqt/-lqt-mt/' \
+	configure.in
+sed -i -e 's,QTDIR)/lib ,QTDIR)/%{_lib} ,;s,QTDIR)/include,QTDIR)/include/qt,;s/-lqt/-lqt-mt/' \
+	examples/Makefile.am
+
 %build
 %{__libtoolize}
 %{__aclocal}
@@ -89,7 +94,7 @@ u¿ywaj±cych bibliotek pangopdf.
 	--enable-pdflib \
 	--with-html-dir=%{_gtkdocdir} \
 	--with-x \
-	%{!?with_qt:--without-qt}
+	--with%{!?with_qt:out}-qt%{?with_qt:=/usr}
 
 %{__make}
 
