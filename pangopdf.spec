@@ -76,6 +76,20 @@ nie s± zaimplementowane w Pango.
 Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
 u¿ywaj±cych bibliotek pangopdf.
 
+%package viewer
+Summary:	pangopdf and Qt based UTF-8 file viewer
+Summary(pl):	Przegl±darka plików UTF-8 oparta na pangopdf i Qt
+Group:		X11/Applications
+Requires:	%{name} = %{version}-%{release}
+
+%description viewer
+Example program to view a UTF-8 encoding file using Pango to render
+result.
+
+%description viewer -l pl
+Przyk³adowy program do ogl±dania plików w kodowaniu UTF-8 przy u¿yciu
+Pango do wy¶wietlania wyników.
+
 %prep
 %setup -q
 
@@ -113,7 +127,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS* ChangeLog* NEWS* README* TODO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/pangopdf-querymodules
 %dir %{_sysconfdir}/pangopdf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pangopdf/pangox.aliases
 %dir %{_libdir}/pangopdf
@@ -131,3 +145,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/*.pc
 %{_includedir}/pangopdf
 %{_gtkdocdir}/pangopdf
+
+%if %{with qt}
+%files viewer
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/pango-viewer
+%endif
