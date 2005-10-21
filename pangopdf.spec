@@ -5,7 +5,7 @@ Version:	1.2.3.7
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/pangopdf/%{name}-%{version}.tar.gz
 # Source0-md5:	e0671aeaba45e0aa5a2c1aba8cebba41
 URL:		http://pangopdf.sourceforge.net/
 BuildRequires:	autoconf
@@ -44,7 +44,7 @@ nie s± zaimplementowane w Pango.
 Summary:	Header files for Pango PDF backend
 Summary(pl):	Pliki nag³ówkowe dla backendu PDF dla Pango
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 PangoPDF implements a version of the Pango (http://www.pango.org/)
@@ -70,7 +70,6 @@ u¿ywaj±cych bibliotek pangopdf.
 %setup -q
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -84,17 +83,15 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
+rm -f $RPM_BUILD_ROOT%{_libdir}/pangopdf/pango/1.2.0/modules/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
-/sbin/ldconfig -n /usr/lib/pangopdf
 
 %files
 %defattr(644,root,root,755)
@@ -103,18 +100,17 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/pangopdf
 %config %{_sysconfdir}/pangopdf/pangox.aliases
 %dir %{_libdir}/pangopdf
-%attr(755,root,root) %{_libdir}/pangopdf/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/pangopdf/lib*.so.*
 %dir %{_libdir}/pangopdf/pango
 %dir %{_libdir}/pangopdf/pango/1.2.0
 %dir %{_libdir}/pangopdf/pango/1.2.0/modules
 %attr(755,root,root) %{_libdir}/pangopdf/pango/1.2.0/modules/*.so
-%{_libdir}/pangopdf/pango/1.2.0/modules/*.la
 %{_datadir}/pangopdf
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/pkgconfig/*.pc
+%attr(755,root,root) %{_libdir}/pangopdf/*.so
 %{_libdir}/pangopdf/*.la
-%{_libdir}/pangopdf/*.so
+%{_pkgconfigdir}/*.pc
 %{_includedir}/pangopdf
 %{_gtkdocdir}/pangopdf
