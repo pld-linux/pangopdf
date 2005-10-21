@@ -8,7 +8,7 @@ Summary:	Pango PDF backend
 Summary(pl):	Backend PDF dla Pango
 Name:		pangopdf
 Version:	1.2.3.7
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/pangopdf/%{name}-%{version}.tar.gz
