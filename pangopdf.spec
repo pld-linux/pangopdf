@@ -5,7 +5,7 @@
 %bcond_without	qt		# don't build Qt-based viewer
 #
 Summary:	Pango PDF backend
-Summary(pl):	Backend PDF dla Pango
+Summary(pl.UTF-8):   Backend PDF dla Pango
 Name:		pangopdf
 Version:	1.2.3.7
 Release:	2
@@ -43,16 +43,16 @@ implements several of the inline properties defined by XSL
 (http://www.w3.org/TR/xsl/) that are not currently implemented by
 Pango.
 
-%description -l pl
+%description -l pl.UTF-8
 PangoPDF to implementacja wersji biblioteki Pango
-(http://www.pango.org/) z backendem PDF do tworzenia wyj∂cia w PDF. Ta
-biblioteka ma zaimplementowanych takøe trochÍ w≥asno∂ci inline
-zdefiniowanych przez XSL (http://www.w3.org/TR/xsl/), ktÛre aktualnie
-nie s± zaimplementowane w Pango.
+(http://www.pango.org/) z backendem PDF do tworzenia wyj≈õcia w PDF. Ta
+biblioteka ma zaimplementowanych tak≈ºe trochƒô w≈Çasno≈õci inline
+zdefiniowanych przez XSL (http://www.w3.org/TR/xsl/), kt√≥re aktualnie
+nie sƒÖ zaimplementowane w Pango.
 
 %package devel
 Summary:	Header files for Pango PDF backend
-Summary(pl):	Pliki nag≥Ûwkowe dla backendu PDF dla Pango
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe dla backendu PDF dla Pango
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -66,19 +66,19 @@ Pango.
 This package contains the header files needed to develop programs that
 use these pangopdf.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 PangoPDF to implementacja wersji biblioteki Pango
-(http://www.pango.org/) z backendem PDF do tworzenia wyj∂cia w PDF. Ta
-biblioteka ma zaimplementowanych takøe trochÍ w≥asno∂ci inline
-zdefiniowanych przez XSL (http://www.w3.org/TR/xsl/), ktÛre aktualnie
-nie s± zaimplementowane w Pango.
+(http://www.pango.org/) z backendem PDF do tworzenia wyj≈õcia w PDF. Ta
+biblioteka ma zaimplementowanych tak≈ºe trochƒô w≈Çasno≈õci inline
+zdefiniowanych przez XSL (http://www.w3.org/TR/xsl/), kt√≥re aktualnie
+nie sƒÖ zaimplementowane w Pango.
 
-Pakiet zawiera pliki nag≥Ûwkowe niezbÍdne do kompilowania programÛw
-uøywaj±cych bibliotek pangopdf.
+Pakiet zawiera pliki nag≈Ç√≥wkowe niezbƒôdne do kompilowania program√≥w
+u≈ºywajƒÖcych bibliotek pangopdf.
 
 %package viewer
 Summary:	pangopdf and Qt based UTF-8 file viewer
-Summary(pl):	Przegl±darka plikÛw UTF-8 oparta na pangopdf i Qt
+Summary(pl.UTF-8):   PrzeglƒÖdarka plik√≥w UTF-8 oparta na pangopdf i Qt
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -86,9 +86,9 @@ Requires:	%{name} = %{version}-%{release}
 Example program to view a UTF-8 encoding file using Pango to render
 result.
 
-%description viewer -l pl
-Przyk≥adowy program do ogl±dania plikÛw w kodowaniu UTF-8 przy uøyciu
-Pango do wy∂wietlania wynikÛw.
+%description viewer -l pl.UTF-8
+Przyk≈Çadowy program do oglƒÖdania plik√≥w w kodowaniu UTF-8 przy u≈ºyciu
+Pango do wy≈õwietlania wynik√≥w.
 
 %prep
 %setup -q
