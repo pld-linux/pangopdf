@@ -5,7 +5,7 @@
 %bcond_without	qt		# don't build Qt-based viewer
 #
 Summary:	Pango PDF backend
-Summary(pl.UTF-8):   Backend PDF dla Pango
+Summary(pl.UTF-8):	Backend PDF dla Pango
 Name:		pangopdf
 Version:	1.2.3.7
 Release:	2
@@ -52,7 +52,7 @@ nie są zaimplementowane w Pango.
 
 %package devel
 Summary:	Header files for Pango PDF backend
-Summary(pl.UTF-8):   Pliki nagłówkowe dla backendu PDF dla Pango
+Summary(pl.UTF-8):	Pliki nagłówkowe dla backendu PDF dla Pango
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -78,7 +78,7 @@ używających bibliotek pangopdf.
 
 %package viewer
 Summary:	pangopdf and Qt based UTF-8 file viewer
-Summary(pl.UTF-8):   Przeglądarka plików UTF-8 oparta na pangopdf i Qt
+Summary(pl.UTF-8):	Przeglądarka plików UTF-8 oparta na pangopdf i Qt
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
